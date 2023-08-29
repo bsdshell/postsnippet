@@ -14,3 +14,8 @@
 ```
 Sat 10 Jun 11:46:50 2023 
 * Fixed: Prefix spaces are removed by mistake
+
+Tue 29 Aug 01:33:01 2023 
+* Added new feature:
+    * updatecode
+    * insertcode
