@@ -162,6 +162,37 @@ postCodeBlockX url lt = do
                 else do
                     pp "ERROR: Code Block have at lease two lines"
 
+deleteCodeBlock :: String -> [Integer] -> IO()
+deleteCodeBlock url pidlist = do
+                            manager <- newManager defaultManagerSettings
+                            let cmd = "deletecode"
+                            let furl = url </> cmd
+                            let block = UpdateCodeBlockX{ pidx = 0, pidlistx = pidlist, newcodex = "", begtx = 0, endtx = 0 } 
+                            fw "block"
+                            pre block
+                            -- initReq <- parseRequest "http://localhost:8081/updatecode"
+                            initReq <- parseRequest furl 
+                            let req = initReq { method = "POST", requestBody = RequestBodyLBS $ encode block }
+                            response <- httpLbs req manager
+                            putStrLn $ "The status code was: " ++ (show $ statusCode $ responseStatus response)
+                            print $ responseBody response
+
+deleteCodeBlockX :: String -> [Integer] -> IO()
+deleteCodeBlockX url pidlist = do
+                            manager <- newManager defaultManagerSettings
+                            let cmd = "deletecode"
+                            let furl = url </> cmd
+                            let block = UpdateCodeBlockX{ pidx = 0, pidlistx = pidlist, newcodex = "", begtx = 0, endtx = 0 } 
+                            fw "block"
+                            pre block
+                            -- initReq <- parseRequest "http://localhost:8081/updatecode"
+                            initReq <- parseRequest furl 
+                            let req = initReq { method = "POST", requestBody = RequestBodyLBS $ encode block }
+                            response <- httpLbs req manager
+                            putStrLn $ "The status code was: " ++ (show $ statusCode $ responseStatus response)
+                            print $ responseBody response
+
+
 putColor n s = putStrLn $ colorfgStr n s
 
 fun2 :: [(Char, Int)] -> String -> [(Char, Int)]
@@ -254,6 +285,22 @@ main = do
                 let lt' = firstCodeBlock lt
                 postCodeBlockX url lt' 
 
+              | v == 2 && (head argList == "-d" || head argList == "-t")  -> do
+                let a1 = head argList
+                let urlx = a1 == "-d" ? "http://localhost:8080" $ (a1 == "-t" ? "http://localhost:8081" $ "")
+                let tmpfile = last argList
+                ls <- readFileSTextList tmpfile >>= \x -> return $ map strictTextToStr x
+                -- ls <- getContents >>= return . lines
+                let lt = trimBothEnd ls
+                let lt' = firstCodeBlock lt
+                postCodeBlockX urlx lt' 
+
+              | v >= 2 && (head argList == "-del")  -> do
+                let urlx = "http://localhost:8080"
+                -- let pid = read (last argList) :: Integer
+                let pidlist = map (\x -> read x :: Integer) $ tail argList
+                deleteCodeBlock urlx pidlist 
+
               | v == 10 -> do
                 let url = head argList 
                 -- pipe as stdInput
@@ -288,7 +335,6 @@ main = do
                 putColor 100 "\tVerson: 1.0"
                 putColor 100 "\t"
                 let s = [r| 
-                
                             postSnippet -d  /tmp/a  => -d [default] => http://localhost:8080
                             postSnippet -t  /tmp/a  => -t [test]    => http://localhost:8081
                             echo /tmp/a | postSnippet -d
