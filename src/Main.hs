@@ -1,3 +1,5 @@
+module Main where
+
 {-# LANGUAGE OverloadedStrings, DeriveGeneric, DeriveAnyClass #-}
 {-# LANGUAGE DuplicateRecordFields #-} 
 {-# LANGUAGE QuasiQuotes #-} -- support raw string [r|<p>dog</p> |]
@@ -71,18 +73,31 @@ take2 :: String -> [String]
 take2 [] = []
 take2 s | len s == 1 = [s]
 take2 (a:b:cx) = [a,b] : take2 (b:cx)
-            
+
+  
 {-|
-    === Check whether the first line is the header with pid 
+    === Check whether the first line is the header with pid
 
     @
-        ab:*:cd  @= 123
+        ab:*:cd  @= 123 => True
+        ab-c:*: abc     => False
+        ab_c:*: abc     => True
+
+        [a-zA-Z0-9_]+:*: whatever => True
+
+        -- Old isValidHeader => True
+        sed 's/[^[:print:]]\[[^a-zA-Z]*[a-zA-Z]//g' $t
+
+        -- New isValidHeader => False
+        sed 's/[^[:print:]]\[[^a-zA-Z]*[a-zA-Z]//g' $t
     @
 -}
 isValidHeader :: String -> Bool
 isValidHeader [] = False
-isValidHeader cx = (c2 == 2 && d1 == 1) || c2 == 2
-    where 
+isValidHeader cx = (b1 && c2 == 2 && d1 == 1) || (b1 && c2 == 2)
+    where
+      s1 = splitStrCharNoRegex ":" cx
+      b1 = if len s1 == 3 then let h = head s1 in hasWordChar h else False
       c2 = sum $ map (\x -> x == ':' ? 1 $ 0) cx
       d1 = sum $ map (\x -> x == "@=" ? 1 $ 0) $ take2 cx
       lt = join (***) trim $ let ma = splitWhenFirstNoRegex "@=" cx in case ma of
@@ -285,6 +300,8 @@ main = do
                 let lt' = firstCodeBlock lt
                 postCodeBlockX url lt' 
 
+              -- postSnippet -d /tmp/x1.x
+              -- postSnippet -t /tmp/x1.x
               | v == 2 && (head argList == "-d" || head argList == "-t")  -> do
                 let a1 = head argList
                 let urlx = a1 == "-d" ? "http://localhost:8080" $ (a1 == "-t" ? "http://localhost:8081" $ "")
@@ -335,6 +352,7 @@ main = do
                 putColor 100 "\tVerson: 1.0"
                 putColor 100 "\t"
                 let s = [r| 
+                            postSnippet -del 10 20 30               => Delete pids = 10 20 30
                             postSnippet -d  /tmp/a  => -d [default] => http://localhost:8080
                             postSnippet -t  /tmp/a  => -t [test]    => http://localhost:8081
                             echo /tmp/a | postSnippet -d

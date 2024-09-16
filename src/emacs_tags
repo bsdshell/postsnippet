@@ -1,0 +1,904 @@
+
+/Users/aaa/myfile/github/postSnippet/src/AronModule.hs,29230
+module AronModule AronModule12,13
+print_ascii_f:print_ascii_f185,186
+instance Num Num a => Num [a]195,196
+    (+(+)196,197
+    (-(-)197,198
+    (*(*)198,199
+    abs abs199,200
+    signum signum200,201
+    fromInteger fromInteger201,202
+class Cnum Cnum206,207
+    _sqrt,_sin,_cos:_cos207,208
+    _sqrt,_sin,_sin207,208
+    _sqrt,_sqrt207,208
+instance Cnum Cnum Int208,209
+    _cos _cos209,210
+    _sin _sin210,211
+    _sqrt _sqrt211,212
+instance Cnum Cnum Float212,213
+    _cos _cos213,214
+    _sin _sin214,215
+    _sqrt _sqrt215,216
+instance Cnum Cnum Double216,217
+    _cos _cos217,218
+    _sin _sin218,219
+    _sqrt _sqrt219,220
+instance Cnum Cnum Integer220,221
+    _cos _cos221,222
+    _sin _sin222,223
+    _sqrt _sqrt223,224
+class Dnum Dnum232,233
+    type DivType DivType233,234
+    _div:_div234,235
+instance Dnum Dnum Integer Float236,237
+    type DivType DivType237,238
+    _div _div238,239
+instance Dnum Dnum Float Integer240,241
+    type DivType DivType241,242
+    _div _div242,243
+instance Dnum Dnum Int Float244,245
+    type DivType DivType245,246
+    _div _div246,247
+instance Dnum Dnum Float Int248,249
+    type DivType DivType249,250
+    _div _div250,251
+instance Dnum Dnum Double Int252,253
+    type DivType DivType253,254
+    _div _div254,255
+instance Dnum Dnum Double Integer256,257
+    type DivType DivType257,258
+    _div _div258,259
+instance Dnum Dnum Integer Double260,261
+    type DivType DivType261,262
+    _div _div262,263
+instance Dnum Dnum Integer Integer264,265
+    type DivType DivType265,266
+    _div _div266,267
+class Add Add268,269
+    type SumTy SumTy269,270
+    addd addd270,271
+instance Add Add Integer Double272,273
+    type SumTy SumTy273,274
+    addd addd274,275
+instance Add Add Double Integer276,277
+    type SumTy SumTy277,278
+    addd addd278,279
+instance Add Add Double Int280,281
+    type SumTy SumTy281,282
+    addd addd282,283
+instance Add Add Int Double284,285
+    type SumTy SumTy285,286
+    addd addd286,287
+instance (N(Num a) => Add a a288,289
+    type SumTy SumTy289,290
+    addd addd290,291
+data CodeBlock CodeBlock295,296
+    CodeBlockCodeBlock296,297
+    { codeBlockId codeBlockId297,298
+    , header header298,299
+    , codeblock codeblock299,300
+    , addedtime addedtime300,301
+    , score score301,302
+instance FromRow FromRow CodeBlock304,305
+  fromRow fromRow305,306
+instance ToRow ToRow CodeBlock309,310
+  toRow toRow310,311
+data SqliteMaster SqliteMaster313,314
+data SqliteMaster = SqliteMaster SqliteMaster313,314
+        x_type:x_type314,315
+        x_name:x_name315,316
+        x_tbl_name:x_tbl_name316,317
+        x_rootpage:x_rootpage317,318
+        x_sql:x_sql318,319
+instance FromRow FromRow SqliteMaster320,321
+  fromRow fromRow321,322
+instance ToRow ToRow SqliteMaster323,324
+  toRow toRow324,325
+data UpdateCodeBlock UpdateCodeBlock327,328
+data UpdateCodeBlock = UpdateCodeBlock{pid:UpdateCodeBlock{pid327,328
+data UpdateCodeBlock = UpdateCodeBlock{pid::Integer, newcode:newcode327,328
+data UpdateCodeBlock = UpdateCodeBlock{pid::Integer, newcode::String, begt:begt327,328
+data UpdateCodeBlock = UpdateCodeBlock{pid::Integer, newcode::String, begt::Integer, endt:endt327,328
+instance DA.FromJSON DA-FromJSON UpdateCodeBlock328,329
+instance DA.ToJSON DA-ToJSON UpdateCodeBlock329,330
+    toEncoding toEncoding330,331
+data UpdateCodeBlockX UpdateCodeBlockX332,333
+data UpdateCodeBlockX = UpdateCodeBlockX{pidx:UpdateCodeBlockX{pidx332,333
+data UpdateCodeBlockX = UpdateCodeBlockX{pidx::Integer, pidlistx pidlistx332,333
+data UpdateCodeBlockX = UpdateCodeBlockX{pidx::Integer, pidlistx :: [Integer], newcodex:newcodex332,333
+data UpdateCodeBlockX = UpdateCodeBlockX{pidx::Integer, pidlistx :: [Integer], newcodex::String, begtx:begtx332,333
+data UpdateCodeBlockX = UpdateCodeBlockX{pidx::Integer, pidlistx :: [Integer], newcodex::String, begtx::Integer, endtx:endtx332,333
+instance DA.FromJSON DA-FromJSON UpdateCodeBlockX333,334
+instance DA.ToJSON DA-ToJSON UpdateCodeBlockX334,335
+    toEncoding toEncoding335,336
+data CodeBlockReply CodeBlockReply337,338
+data CodeBlockReply = CodeBlockReply{ok:CodeBlockReply{ok337,338
+data CodeBlockReply = CodeBlockReply{ok::String, retcmd:retcmd337,338
+data CodeBlockReply = CodeBlockReply{ok::String, retcmd::String, retdata:retdata337,338
+data CodeBlockReply = CodeBlockReply{ok::String, retcmd::String, retdata::String, retbegt:retbegt337,338
+data CodeBlockReply = CodeBlockReply{ok::String, retcmd::String, retdata::String, retbegt::Integer, retendt:retendt337,338
+instance DA.FromJSON DA-FromJSON CodeBlockReply338,339
+instance DA.ToJSON DA-ToJSON CodeBlockReply339,340
+    toEncoding toEncoding340,341
+data ReplyCode ReplyCode342,343
+data ReplyCode = ReplyCode{ReplyCode{342,343
+                            rcmd rcmd343,344
+                            rerror rerror344,345
+                            stdoutx stdoutx345,346
+instance DA.FromJSON DA-FromJSON ReplyCode348,349
+instance DA.ToJSON DA-ToJSON ReplyCode349,350
+    toEncoding toEncoding350,351
+data CommandService CommandService353,354
+data CommandService = CommandService{cmdServ:CommandService{cmdServ353,354
+data CommandService = CommandService{cmdServ::String, paramArg:paramArg353,354
+data CommandService = CommandService{cmdServ::String, paramArg::String, inputData:inputData353,354
+instance DA.FromJSON DA-FromJSON CommandService354,355
+instance DA.ToJSON DA-ToJSON CommandService355,356
+    toEncoding toEncoding356,357
+type CSSPro CSSPro358,359
+div':div'363,364
+divInteger:divInteger367,368
+divII:divII397,398
+rf:rf404,405
+fi:fi407,408
+mat mat415,416
+matr matr421,422
+mat'=mat'427,428
+eps:eps436,437
+data C C440,441
+data C = C{x:C{x440,441
+data C = C{x::Float, y:y440,441
+instance Num Num C442,443
+        (C(Cx1y1)443,444
+        fromInteger fromInteger446,447
+        signum signum447,448
+        abs abs448,449
+instance Eq Eq C450,451
+        (C(Cxy)451,452
+data RedisGroup RedisGroup455,456
+data RedisGroup = Haskell Haskell455,456
+data RedisGroup = Haskell | Java Java455,456
+data RedisGroup = Haskell | Java | Snippet Snippet455,456
+data RedisGroup = Haskell | Java | Snippet | CppCpp455,456
+redisBound:redisBound457,458
+con:con463,464
+mag:mag466,467
+norm:norm469,470
+re:re472,473
+im:im475,476
+co:co478,479
+toPolar:toPolar484,485
+toCard:toCard492,493
+loge:loge511,512
+sqrtC:sqrtC525,526
+sqrtC':sqrtC'530,531
+radianToDegree:radianToDegree535,536
+degreeToRadian:degreeToRadian538,539
+tri:tri541,542
+data GPoint GPoint544,545
+data GPoint = GPoint GPoint544,545
+getX:getX545,546
+getY:getY548,549
+toUpperStr:toUpperStr556,557
+lowerStr:lowerStr564,565
+upperStr:upperStr572,573
+upperChar:upperChar578,579
+toLowerStr:toLowerStr588,589
+concatStr:concatStr598,599
+cat:cat620,621
+readDirMatchKey:readDirMatchKey642,643
+containStr:containStr671,672
+containAscii:containAscii677,678
+containNonAsciiList:containNonAsciiList690,691
+matchAny:matchAny706,707
+matchAnyRegex:matchAnyRegex721,722
+type SKey SKey726,727
+matchScore:matchScore735,736
+matchScoreList:matchScoreList750,751
+fileContainNonAscii:fileContainNonAscii758,759
+fileContain:fileContain768,769
+fileHas:fileHas782,783
+filterList:filterList815,816
+intersectSet:intersectSet826,827
+diffList diffList842,843
+interList interList861,862
+intersectFile:intersectFile872,873
+filterNonEmpty:filterNonEmpty881,882
+containPrefix:containPrefix892,893
+containSuffix:containSuffix902,903
+hasPrefix:hasPrefix910,911
+hasSuffix:hasSuffix913,914
+hasStr:hasStr916,917
+isImage:isImage922,923
+lsTable:lsTable930,931
+replaceFileLineEscape:replaceFileLineEscape954,955
+replaceFileLineEscapeStrict:replaceFileLineEscapeStrict961,962
+strWithSlash:strWithSlash982,983
+replaceFileLine:replaceFileLine999,1000
+redisExtractCppAronLib:redisExtractCppAronLib1047,1048
+readTagsFile:readTagsFile1080,1081
+extraTags:extraTags1096,1097
+replaceList:replaceList1118,1119
+searchSplitAny:searchSplitAny1133,1134
+searchSplitWord:searchSplitWord1159,1160
+searchReplaceAny:searchReplaceAny1199,1200
+searchReplaceAnyTup:searchReplaceAnyTup1213,1214
+searchReplaceAnySBS:searchReplaceAnySBS1216,1217
+searchReplace:searchReplace1272,1273
+searchReplaceWord:searchReplaceWord1291,1292
+interleave:interleave1306,1307
+intersperseInner:intersperseInner1319,1320
+listIn:listIn1335,1336
+listOut:listOut1349,1350
+intersperseOuter:intersperseOuter1359,1360
+repeat':repeat'1372,1373
+repeatN:repeatN1382,1383
+replicateN:replicateN1392,1393
+replicate':replicate'1399,1400
+fillList:fillList1418,1419
+readFileStrict:readFileStrict1437,1438
+readFileListStrict:readFileListStrict1448,1449
+readFileBSList:readFileBSList1454,1455
+readFileBS:readFileBS1463,1464
+readFileSText:readFileSText1471,1472
+readFileSTextList:readFileSTextList1479,1480
+charToStrictByteString:charToStrictByteString1488,1489
+plines plines1498,1499
+breakNewline breakNewline1506,1507
+replaceByteStringFile:replaceByteStringFile1531,1532
+replaceFileWithBSToNew:replaceFileWithBSToNew1548,1549
+replaceFileWithStrToNew:replaceFileWithStrToNew1552,1553
+replaceFileWithStr:replaceFileWithStr1592,1593
+replaceFileWithWord:replaceFileWithWord1613,1614
+replaceFileListWord:replaceFileListWord1635,1636
+replaceFileListStr:replaceFileListStr1657,1658
+searchReplaceListWord:searchReplaceListWord1681,1682
+searchReplaceListStr:searchReplaceListStr1695,1696
+replaceDirWithStr:replaceDirWithStr1707,1708
+replaceRegex:replaceRegex1740,1741
+readFileRepPat:readFileRepPat1752,1753
+replaceFileWithPat:replaceFileWithPat1765,1766
+toStrictBS toStrictBS1774,1775
+strictBSToString strictBSToString1782,1783
+emptySBS:emptySBS1787,1788
+toSBS:toSBS1793,1794
+toLBS:toLBS1812,1813
+toSText:toSText1839,1840
+toLText:toLText1862,1863
+toStr:toStr1887,1888
+catMaybe:catMaybe1912,1913
+removeSpace:removeSpace1924,1925
+isEmpty:isEmpty1928,1929
+escapeHtml:escapeHtml1939,1940
+escapeAmpersand:escapeAmpersand1953,1954
+escapePartial:escapePartial1973,1974
+escapeXML:escapeXML1988,1989
+removeIndex:removeIndex2015,2016
+removeIndex_new:removeIndex_new2021,2022
+removeRowCol:removeRowCol2049,2050
+principleSubmatrix:principleSubmatrix2077,2078
+dropEnd:dropEnd2085,2086
+takeEnd:takeEnd2096,2097
+takeX:takeX2108,2109
+dropX dropX2121,2122
+takeWhileX:takeWhileX2129,2130
+takeBS:takeBS2138,2139
+dropBS:dropBS2147,2148
+splitBS:splitBS2155,2156
+trimWS:trimWS2165,2166
+trimAll:trimAll2172,2173
+trimT:trimT2187,2188
+trimBoth:trimBoth2193,2194
+trimLBS:trimLBS2201,2202
+trimStart:trimStart2214,2215
+trimEnd:trimEnd2223,2224
+splitListEmptyLine:splitListEmptyLine2231,2232
+splitListHalf:splitListHalf2239,2240
+t1 t12244,2245
+t2 t22245,2246
+t3 t32246,2247
+tuplify2:tuplify22249,2250
+tuplify3:tuplify32252,2253
+splitListWhen:splitListWhen2269,2270
+lengthcurve:lengthcurve2304,2305
+lengthcurveInter:lengthcurveInter2327,2328
+isBalanced3:isBalanced32354,2355
+isBalanced2:isBalanced22367,2368
+findBalance:findBalance2387,2388
+isBalanced:isBalanced2409,2410
+strToLazyText:strToLazyText2423,2424
+lazyTextToStr:lazyTextToStr2426,2427
+strToStrictText:strToStrictText2434,2435
+strictTextToStr:strictTextToStr2442,2443
+lazyTextToLazyByteString:lazyTextToLazyByteString2450,2451
+lazyByteStringToLazyText:lazyByteStringToLazyText2453,2454
+strictTextToStrictByteString:strictTextToStrictByteString2459,2460
+strictByteStringToStrictText:strictByteStringToStrictText2465,2466
+strictByteStringToLazyByteString:strictByteStringToLazyByteString2469,2470
+lazyByteStringToStrictByteString:lazyByteStringToStrictByteString2475,2476
+strictTextToLazyText:strictTextToLazyText2478,2479
+lazyTextToStrictText:lazyTextToStrictText2484,2485
+strToStrictByteString:strToStrictByteString2492,2493
+strToLazyByteString:strToLazyByteString2508,2509
+ppad ppad2515,2516
+jsonDecode:jsonDecode2533,2534
+jsonToRecord:jsonToRecord2602,2603
+compileJava:compileJava2620,2621
+pm:pm2660,2661
+pls:pls2669,2670
+ps:ps2676,2677
+printMat printMat2688,2689
+pmat pmat2706,2707
+matrixToStr matrixToStr2730,2731
+psTab:psTab2743,2744
+pa:pa2752,2753
+paa:paa2759,2760
+partList:partList2776,2777
+partList2_delete partList2_delete2786,2787
+partListDiff partListDiff2808,2809
+getLineX:getLineX2820,2821
+copyFileX:copyFileX2828,2829
+cp:cp2837,2838
+spanA:spanA2843,2844
+splitSPC:splitSPC2849,2850
+splitBlock:splitBlock2884,2885
+parseFileBlock:parseFileBlock2901,2902
+prefix:prefix2915,2916
+prefixSuffix:prefixSuffix2918,2919
+lengthK:lengthK2931,2932
+substr:substr2942,2943
+allSubstr:allSubstr2953,2954
+unique:unique2971,2972
+uniqueOrder:uniqueOrder2992,2993
+mergeListList:mergeListList3003,3004
+mergeList:mergeList3011,3012
+mergeListLen:mergeListLen3018,3019
+mergeSortList:mergeSortList3028,3029
+iterateList:iterateList3034,3035
+unwrap:unwrap3038,3039
+codeCapture:codeCapture3042,3043
+binarySearch:binarySearch3050,3051
+qqsort:qqsort3068,3069
+sort:sort3075,3076
+sqVec:sqVec3083,3084
+quickSort:quickSort3093,3094
+quickSort':quickSort'3107,3108
+quickSort1:quickSort13118,3119
+quickSortAny:quickSortAny3125,3126
+mergeSortedList:mergeSortedList3132,3133
+rotateRight:rotateRight3144,3145
+rotateLeft:rotateLeft3154,3155
+mergeSortC:mergeSortC3164,3165
+mergeSort:mergeSort3185,3186
+mergeSortM:mergeSortM3214,3215
+groupCount:groupCount3249,3250
+vimLink:vimLink3264,3265
+watchDir:watchDir3293,3294
+fileModTime:fileModTime3307,3308
+fileModTimeInt:fileModTimeInt3321,3322
+fileModTimeInteger:fileModTimeInteger3330,3331
+intToCTime:intToCTime3341,3342
+dirModified:dirModified3350,3351
+fileSizeA:fileSizeA3360,3361
+readSnippet:readSnippet3395,3396
+readSnippetStr:readSnippetStr3422,3423
+readSnippetToDatabase:readSnippetToDatabase3446,3447
+queryDatabaseToFile:queryDatabaseToFile3489,3490
+mysqlQuery:mysqlQuery3534,3535
+createConfigMap:createConfigMap3562,3563
+readFileRemote:readFileRemote3580,3581
+readFileRemoteToList:readFileRemoteToList3589,3590
+readFileLatin1:readFileLatin13594,3595
+readFile2d:readFile2d3629,3630
+readFileToInteger2d:readFileToInteger2d3645,3646
+orgList:orgList3670,3671
+orgTable:orgTable3679,3680
+writeToFile:writeToFile3693,3694
+writeFileBS:writeFileBS3705,3706
+writeFileListBS:writeFileListBS3716,3717
+writeToFileAppend:writeToFileAppend3737,3738
+writeFileListAppend:writeFileListAppend3747,3748
+nToFractMat:nToFractMat3760,3761
+toNum:toNum3766,3767
+nToNumMat nToNumMat3774,3775
+rToRatMat:rToRatMat3783,3784
+writeToFile2dMat:writeToFile2dMat3806,3807
+writeToFileMat:writeToFileMat3814,3815
+filtermap filtermap3829,3830
+putStrLnBS:putStrLnBS3837,3838
+putStrBS:putStrBS3840,3841
+bs:bs3869,3870
+fs:fs3909,3910
+listDot:listDot3926,3927
+listDots:listDots3931,3932
+scaleList:scaleList3935,3936
+listScale:listScale3939,3940
+listAdd:listAdd3944,3945
+listSub:listSub3949,3950
+listMul:listMul3954,3955
+listNeg:listNeg3964,3965
+dim:dim3973,3974
+zipWithArr:zipWithArr3984,3985
+zipWithArrToList:zipWithArrToList4004,4005
+det:det4016,4017
+multiMatInt:multiMatInt4029,4030
+multiVec multiVec4034,4035
+multiMatStr:multiMatStr4069,4070
+cart:cart4074,4075
+multiMatDouble:multiMatDouble4082,4083
+multiMatR:multiMatR4106,4107
+multiMatNum:multiMatNum4109,4110
+multiMat:multiMat4134,4135
+matDiv:matDiv4145,4146
+multiRatMat:multiRatMat4149,4150
+sumRatList:sumRatList4152,4153
+addR:addR4157,4158
+ratToInt:ratToInt4173,4174
+normalR:normalR4182,4183
+reduceForm:reduceForm4194,4195
+reduce:reduce4202,4203
+stringToFloat:stringToFloat4228,4229
+strToF strToF4231,4232
+stringToListInt:stringToListInt4245,4246
+word:word4257,4258
+sentence:sentence4271,4272
+isWord:isWord4289,4290
+isZeroPos:isZeroPos4296,4297
+perm:perm4313,4314
+perm2:perm24378,4379
+rangeNum:rangeNum4391,4392
+perm3 perm34423,4424
+splitR:splitR4435,4436
+multR:multR4446,4447
+multRL:multRL4456,4457
+normR:normR4459,4460
+getVec:getVec4464,4465
+normList:normList4480,4481
+proj:proj4486,4487
+projn:projn4503,4504
+rMatrixUpperTri rMatrixUpperTri4529,4530
+rejection:rejection4551,4552
+qrDecompose':qrDecompose'4567,4568
+addRL:addRL4589,4590
+divR:divR4600,4601
+divR':divR'4606,4607
+invR:invR4612,4613
+subR:subR4623,4624
+negR:negR4626,4627
+negList:negList4629,4630
+subRL:subRL4632,4633
+eightQueen:eightQueen4654,4655
+sumLeft:sumLeft4686,4687
+sumRight:sumRight4698,4699
+rep2d rep2d4711,4712
+replace1d:replace1d4722,4723
+replace2d:replace2d4735,4736
+diag1:diag14741,4742
+uptri:uptri4746,4747
+leftDiagonal:leftDiagonal4764,4765
+rightDiagonal:rightDiagonal4789,4790
+reverseWord:reverseWord4800,4801
+rw rw4803,4804
+tran:tran4832,4833
+sortRow:sortRow4856,4857
+upperTri:upperTri4888,4889
+upperTri':upperTri'4938,4939
+divI:divI5011,5012
+inverse:inverse5032,5033
+odds:odds5112,5113
+evens:evens5116,5117
+isInver:isInver5127,5128
+isInvertible:isInvertible5160,5161
+ident:ident5168,5169
+ident':ident'5175,5176
+identS:identS5180,5181
+mlist:mlist5192,5193
+randomTemp:randomTemp5208,5209
+drawInteger:drawInteger5220,5221
+randomInteger:randomInteger5228,5229
+randomDouble:randomDouble5240,5241
+randomFloat:randomFloat5252,5253
+randomFrac:randomFrac5270,5271
+randomList:randomList5276,5277
+randIntList:randIntList5297,5298
+randomIntList:randomIntList5310,5311
+randomIntegerList:randomIntegerList5317,5318
+randomMatrix:randomMatrix5327,5328
+geneRandMat:geneRandMat5339,5340
+data Mat Mat5343,5344
+data Mat = Zero Zero5343,5344
+data Mat = Zero | IdId5343,5344
+geneMat1ToN:geneMat1ToN5352,5353
+geneMatMN:geneMatMN5362,5363
+geneMat:geneMat5367,5368
+help:help5373,5374
+cmd:cmd5395,5396
+compileHaskellToBin:compileHaskellToBin5467,5468
+strCompareIC:strCompareIC5481,5482
+baseName:baseName5501,5502
+dropExt:dropExt5504,5505
+takeExt:takeExt5507,5508
+takeName:takeName5515,5516
+dropName:dropName5523,5524
+takeDir:takeDir5533,5534
+dropNameT:dropNameT5539,5540
+dropExtT:dropExtT5545,5546
+baseNameT:baseNameT5552,5553
+takeFileNameT:takeFileNameT5558,5559
+gotoCurrDir:gotoCurrDir5567,5568
+dirWalk dirWalk5592,5593
+dirWalkPathList:dirWalkPathList5612,5613
+lsCurr:lsCurr5618,5619
+lsDir:lsDir5621,5622
+getDirContent:getDirContent5627,5628
+lsRegex:lsRegex5636,5637
+touch:touch5644,5645
+rm:rm5650,5651
+isDir:isDir5662,5663
+dirExist:dirExist5665,5666
+isFile:isFile5668,5669
+fExist:fExist5676,5677
+fileExistA:fileExistA5679,5680
+fe fe5685,5686
+rmDir:rmDir5693,5694
+pwd:pwd5704,5705
+cd:cd5714,5715
+setCurrentDir:setCurrentDir5720,5721
+en:en5728,5729
+cc:cc5731,5732
+g:g5734,5735
+sleepSec:sleepSec5742,5743
+sleep:sleep5748,5749
+asplitPath:asplitPath5766,5767
+splitPathA:splitPathA5787,5788
+take':take'5791,5792
+takeIf:takeIf5804,5805
+dropIf:dropIf5820,5821
+takeN:takeN5826,5827
+drop':drop'5830,5831
+pathBase:pathBase5833,5834
+dropPath:dropPath5838,5839
+dropPathEnd:dropPathEnd5844,5845
+takePath:takePath5850,5851
+takePathEnd:takePathEnd5855,5856
+copyRename:copyRename5861,5862
+copyFileToDir:copyFileToDir5873,5874
+createFile:createFile5878,5879
+listDirFilter:listDirFilter5887,5888
+copyDir:copyDir5894,5895
+mv:mv5915,5916
+rename:rename5921,5922
+renameAllFile:renameAllFile5927,5928
+mvFiles mvFiles5933,5934
+mvFile mvFile5934,5935
+mkdir:mkdir5940,5941
+mkdirp:mkdirp5943,5944
+sfilter:sfilter5946,5947
+setCursorPos:setCursorPos5969,5970
+setCursorPosStr:setCursorPosStr5972,5973
+getTerminalSize:getTerminalSize5981,5982
+getScreenSize:getScreenSize5995,5996
+sys:sys6039,6040
+typeChar:typeChar6047,6048
+linesBS:linesBS6074,6075
+linesSText:linesSText6083,6084
+linesST linesST6089,6090
+isHex:isHex6103,6104
+isHexStr:isHexStr6111,6112
+isDigitStr:isDigitStr6119,6120
+isLetterStr:isLetterStr6127,6128
+isLetterChar:isLetterChar6137,6138
+isDigitChar:isDigitChar6147,6148
+run':run'6155,6156
+run:run6170,6171
+runCmd:runCmd6192,6193
+runShell runShell6230,6231
+df:df6248,6249
+tangent:tangent6278,6279
+tangentVec:tangentVec6284,6285
+prime prime6294,6295
+oneRoot:oneRoot6319,6320
+rootList:rootList6332,6333
+outer:outer6348,6349
+out:out6378,6379
+outerSum:outerSum6384,6385
+outerMod:outerMod6391,6392
+outerStr:outerStr6394,6395
+(â(â¦¶)6402,6403
+(â(â)6403,6404
+(â(â)6406,6407
+vcol:vcol6424,6425
+getColumn:getColumn6432,6433
+vrow:vrow6440,6441
+getRow:getRow6448,6449
+zipWith2:zipWith26465,6466
+data XNode XNode6470,6471
+data XNode = XNode XNode6470,6471
+insertTries:insertTries6483,6484
+insertTriesList:insertTriesList6494,6495
+containsTries:containsTries6506,6507
+data Tree Tree6519,6520
+data Tree a = EmptyEmpty6519,6520
+            | Node Node6520,6521
+insertNode:insertNode6522,6523
+insertFromList:insertFromList6529,6530
+data LeafyTree LeafyTree6536,6537
+data LeafyTree a = Branch Branch6536,6537
+                   | Leaf Leaf6537,6538
+instance Foldable Foldable LeafyTree6567,6568
+    foldMap foldMap6568,6569
+inorder:inorder6574,6575
+maxlen:maxlen6581,6582
+head':head'6589,6590
+isBST:isBST6603,6604
+binsert:binsert6622,6623
+isSym:isSym6633,6634
+lca:lca6654,6655
+buildTree:buildTree6683,6684
+anagram:anagram6705,6706
+redisExtractAronModule:redisExtractAronModule6746,6747
+redisExtractJavaMethod:redisExtractJavaMethod6821,6822
+redisExtractJavaMethodWithPackage:redisExtractJavaMethodWithPackage6859,6860
+redisExtractSnippet:redisExtractSnippet6904,6905
+textArea:textArea6927,6928
+htmlTable:htmlTable6957,6958
+htmlTableRowCol:htmlTableRowCol6969,6970
+htmlTableRowColSText:htmlTableRowColSText6978,6979
+getOS:getOS7006,7007
+data ShellHistory ShellHistory7014,7015
+data ShellHistory = ShellHistoryShellHistory7014,7015
+  { shId shId7015,7016
+  , shcmd shcmd7016,7017
+instance FromRow FromRow ShellHistory7021,7022
+   fromRow fromRow7022,7023
+instance ToRow ToRow ShellHistory7025,7026
+   toRow toRow7026,7027
+insertShellHistory:insertShellHistory7070,7071
+queryShellHistory:queryShellHistory7098,7099
+appNotify:appNotify7112,7113
+redisGet:redisGet7146,7147
+redisGetConn:redisGetConn7167,7168
+redisSet:redisSet7194,7195
+redisSetConn:redisSetConn7197,7198
+redisSetConnSByteString:redisSetConnSByteString7207,7208
+redisConnectDefault:redisConnectDefault7217,7218
+checkCSSColorFormat:checkCSSColorFormat7227,7228
+cssToStr:cssToStr7233,7234
+concatStyle:concatStyle7239,7240
+fun444:fun4447244,7245
+fun555:fun5557247,7248
+pf:pf7292,7293
+p:p7298,7299
+pp2 pp27302,7303
+fl:fl7304,7305
+pw:pw7318,7319
+fpp:fpp7321,7322
+fw:fw7324,7325
+ff:ff7343,7344
+(?(?)7363,7364
+(<(<<<)7368,7369
+readConfig:readConfig7413,7414
+concatFile:concatFile7428,7429
+extractNumFromStr:extractNumFromStr7434,7435
+strToIntegerMaybe:strToIntegerMaybe7451,7452
+gcdList:gcdList7457,7458
+commentLine:commentLine7462,7463
+commentCode:commentCode7480,7481
+takeBetweenExc:takeBetweenExc7495,7496
+takeIndexBetweenInc:takeIndexBetweenInc7515,7516
+maxList:maxList7518,7519
+printBox:printBox7543,7544
+printBoxColor:printBoxColor7598,7599
+printBoxColor2:printBoxColor27615,7616
+splitWhileStr:splitWhileStr7634,7635
+getLineFlush:getLineFlush7640,7641
+replaceFileLineNoRegex:replaceFileLineNoRegex7657,7658
+replaceLineNoRegexListTuple:replaceLineNoRegexListTuple7664,7665
+runSh runSh7709,7710
+runShStr runShStr7722,7723
+clear:clear7732,7733
+pp:pp7736,7737
+runRawCmd:runRawCmd7760,7761
+ls:ls7796,7797
+getPwd:getPwd7804,7805
+getpwd:getpwd7813,7814
+lsFile:lsFile7830,7831
+lsStr:lsStr7841,7842
+drawInt:drawInt7858,7859
+lsFileFull:lsFileFull7879,7880
+type RegexStr RegexStr7886,7887
+lsRegexFull:lsRegexFull7894,7895
+lsFullRegex:lsFullRegex7907,7908
+randomInt:randomInt7916,7917
+writeFileStr:writeFileStr7927,7928
+writeFileOver writeFileOver7934,7935
+writeFileList:writeFileList7947,7948
+c2w_:c2w_7958,7959
+intToString:intToString7967,7968
+integerToString:integerToString7975,7976
+integerToInt:integerToInt7983,7984
+intToCharDigit:intToCharDigit7999,8000
+extractStr:extractStr8019,8020
+integerToBinary:integerToBinary8022,8023
+charToDecimal:charToDecimal8032,8033
+charToDecimalInteger charToDecimalInteger8035,8036
+charToIntX charToIntX8056,8057
+char0to9ToInt char0to9ToInt8063,8064
+integerToCharDigit:integerToCharDigit8072,8073
+stringToInteger:stringToInteger8091,8092
+strToInteger:strToInteger8099,8100
+stringToInt:stringToInt8129,8130
+strToInt:strToInt8137,8138
+pre:pre8154,8155
+prel:prel8166,8167
+readFileLatin1ToList:readFileLatin1ToList8194,8195
+readFileList:readFileList8204,8205
+readFileStr:readFileStr8207,8208
+readFileDouble:readFileDouble8224,8225
+readFileFloat:readFileFloat8246,8247
+readFileInt:readFileInt8268,8269
+timeNowPico:timeNowPico8279,8280
+timeNowNano:timeNowNano8287,8288
+timeNowMicro:timeNowMicro8293,8294
+timeNowMilli:timeNowMilli8299,8300
+timeNowSecond:timeNowSecond8305,8306
+getLocalTime:getLocalTime8321,8322
+getLocalDate:getLocalDate8333,8334
+getDate:getDate8347,8348
+dateStr:dateStr8357,8358
+date:date8367,8368
+getTime:getTime8379,8380
+showTime:showTime8388,8389
+trim:trim8398,8399
+splitStr:splitStr8422,8423
+splitStrChar:splitStrChar8440,8441
+splitStrCharTrim:splitStrCharTrim8453,8454
+matchAllBS:matchAllBS8461,8462
+len:len8471,8472
+splitStrTuple:splitStrTuple8480,8481
+logFile:logFile8484,8485
+logFile2:logFile28487,8488
+logFileTmp:logFileTmp8494,8495
+logFileNoName:logFileNoName8499,8500
+logFileG:logFileG8507,8508
+logFileSBS2:logFileSBS28518,8519
+showIntAtBaseX:showIntAtBaseX8543,8544
+integerToHex:integerToHex8560,8561
+intToHex:intToHex8576,8577
+hexToInt:hexToInt8589,8590
+unescape unescape8606,8607
+intToUnicode:intToUnicode8617,8618
+hexToUnicode:hexToUnicode8623,8624
+intToChar:intToChar8631,8632
+hexToChar:hexToChar8639,8640
+Ï:Ï8642,8643
+data FrameCount FrameCount8645,8646
+data FrameCount = FrameCount{frameTime:FrameCount{frameTime8645,8646
+data FrameCount = FrameCount{frameTime::Integer, frameCount:frameCount8645,8646
+data FrameCount = FrameCount{frameTime::Integer, frameCount::Integer, frameNewCount:frameNewCount8645,8646
+data FrameCount = FrameCount{frameTime::Integer, frameCount::Integer, frameNewCount::Integer, frameIndex:frameIndex8645,8646
+resetRefFrame:resetRefFrame8648,8649
+readRefFrame2:readRefFrame28664,8665
+readRefFrame:readRefFrame8708,8709
+fileSizeStrToNum:fileSizeStrToNum8734,8735
+whichGetPath:whichGetPath8745,8746
+openFileUtf8:openFileUtf88757,8758
+readFileUtf8:readFileUtf88769,8770
+scientificToFloat:scientificToFloat8785,8786
+sciToFloat:sciToFloat8801,8802
+colorfgStr:colorfgStr8858,8859
+colorbgStr:colorbgStr8887,8888
+createProcessPipeData:createProcessPipeData8926,8927
+writeFileSText:writeFileSText8952,8953
+writeFileLText:writeFileLText8959,8960
+(>(>>>)8966,8967
+pad:pad8979,8980
+nzero:nzero8985,8986
+shiftMatrixLeft:shiftMatrixLeft8998,8999
+shellHighlight:shellHighlight9014,9015
+blockBegEnd:blockBegEnd9069,9070
+pick:pick9098,9099
+containAll:containAll9113,9114
+combin:combin9144,9145
+drawRectBar:drawRectBar9150,9151
+histogram:histogram9168,9169
+insertIndexAt:insertIndexAt9187,9188
+isInList isInList9197,9198
+removeFirstList:removeFirstList9209,9210
+removeFromList:removeFromList9220,9221
+readFileInteger2d:readFileInteger2d9261,9262
+readFileFloat2d:readFileFloat2d9302,9303
+readTable:readTable9313,9314
+alignTable:alignTable9332,9333
+trimList trimList9354,9355
+trimListST trimListST9371,9372
+stepList:stepList9409,9410
+splitWhenFirstNoRegex splitWhenFirstNoRegex9445,9446
+splitWhenLastNoRegex splitWhenLastNoRegex9463,9464
+splitStrCharNoRegex splitStrCharNoRegex9490,9491
+printFile printFile9499,9500
+frequenceCount:frequenceCount9523,9524
+data FileBlock FileBlock9528,9529
+data FileBlock =  DropHeadDropHead9528,9529
+             | DropLastDropLast9529,9530
+             | DropIndex DropIndex9530,9531
+             | PrintIndex PrintIndex9531,9532
+             | PrintHeadPrintHead9532,9533
+             | PrintLastPrintLast9533,9534
+             | PrintAllPrintAll9534,9535
+             | Append Append9535,9536
+             | AppendList AppendList9536,9537
+             | Prepend Prepend9537,9538
+             | NumberOfBlock NumberOfBlock9538,9539
+fileBlock fileBlock9545,9546
+splitPrefix splitPrefix9628,9629
+breakFirst breakFirst9634,9635
+grepx grepx9642,9643
+grepLine grepLine9657,9658
+catx catx9667,9668
+clipBoardcp clipBoardcp9675,9676
+pbcopy pbcopy9681,9682
+clipBoardpa clipBoardpa9684,9685
+pbpaste pbpaste9687,9688
+getContentsCTRLD getContentsCTRLD9699,9700
+hasSubstr hasSubstr9715,9716
+hasStrBlock hasStrBlock9725,9726
+powerSet powerSet9745,9746
+swap swap9752,9753
+fun10:fun109811,9812
+
+/Users/aaa/myfile/github/postSnippet/src/AronDevLib.hs,510
+module AronDevLib AronDevLib7,8
+class MyType MyType22,23
+  rmInx rmInx23,24
+instance MyType MyType Int [a] [a]25,26
+  rmInx rmInx26,27
+instance MyType MyType Integer [a] [a]28,29
+  rmInx rmInx29,30
+countNum countNum32,33
+integerToNum:integerToNum41,42
+(Ã(Ã·)45,46
+(â(â¨¸)67,68
+(Ã(Ã)93,94
+(â(â)113,114
+(â(â)115,116
+moveFromTo2:moveFromTo2131,132
+fun44:fun44144,145
+drawCylinder:drawCylinder156,157
+xIntToFloat:xIntToFloat188,189
+xIntegerToFloat xIntegerToFloat191,192
+
+/Users/aaa/myfile/github/postSnippet/src/AronAlias.hs,243
+module AronAlias AronAlias0,1
+wfs:wfs74,75
+wf:wf77,78
+sw sw80,81
+rev rev83,84
+wfl wfl86,87
+rfl rfl88,89
+rep rep90,91
+tr tr92,93
+lent lent94,95
+ft ft96,97
+env env98,99
+ev ev99,100
+cdEnv:cdEnv101,102
+cde cde104,105
+
+/Users/aaa/myfile/github/postSnippet/src/Main.hs,438
+firstCodeBlock firstCodeBlock60,61
+take2 take269,70
+isValidHeader isValidHeader81,82
+extractHead extractHead94,95
+extractHeadX extractHeadX116,117
+isHeaderT isHeaderT126,127
+postCodeBlockX postCodeBlockX135,136
+deleteCodeBlock deleteCodeBlock164,165
+deleteCodeBlockX deleteCodeBlockX179,180
+putColor putColor195,196
+fun2 fun2197,198
+split2Char split2Char205,206
+trimBothEnd trimBothEnd241,242
+main main247,248
