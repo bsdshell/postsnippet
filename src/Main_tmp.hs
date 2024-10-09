@@ -1,8 +1,8 @@
+module Main where
 {-# LANGUAGE DeriveGeneric, DeriveAnyClass #-}
 {-# LANGUAGE DuplicateRecordFields #-} 
 {-# LANGUAGE QuasiQuotes #-} -- support raw string [r|<p>dog</p> |]
 
-module Main where
 -- import Data.Set   -- collide with Data.List 
 import Control.Monad
 import Data.Char
@@ -351,6 +351,7 @@ main = do
                 putColor 140 "\tSee => HttpSnippetX() and UpdateSnippet()"
                 putColor 100 "\tVerson: 1.0"
                 putColor 100 "\t"
+                {-                
                 let s = [r| 
                             postSnippet -del 10 20 30               => Delete pids = 10 20 30
                             postSnippet -d  /tmp/a  => -d [default] => http://localhost:8080
@@ -377,6 +378,12 @@ main = do
                             See => HttpSnippetX() and UpdateSnippet()
                         |] 
                 let ss = lines s
+                -}
+
+                let s = [r|Input file must contains at least two lines|] 
+--                 let xx = lines s
+                
+                let ss = [] 
                 mapM_ putStrLn ss 
 {--
 main = do
