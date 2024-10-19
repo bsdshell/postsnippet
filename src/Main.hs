@@ -163,7 +163,7 @@ postCodeBlockX url lt = do
                         pre code 
                         let cmd = pid == 0 ? "insertcode" $ "updatecode"
                         let furl = url </> cmd
-                        let block = UpdateCodeBlock{pid = pid, newcode = code, begt = 0, endt = 0} 
+                        let block = UpdateCodeBlock{pid = pid, pidlist = [], newcode = code, begt = 0, endt = 0} 
                         fw "block"
                         pre block
                         -- initReq <- parseRequest "http://localhost:8081/updatecode"
@@ -178,11 +178,11 @@ postCodeBlockX url lt = do
                     pp "ERROR: Code Block have at lease two lines"
 
 deleteCodeBlock :: String -> [Integer] -> IO()
-deleteCodeBlock url pidlist = do
+deleteCodeBlock url pidls = do
                             manager <- newManager defaultManagerSettings
                             let cmd = "deletecode"
                             let furl = url </> cmd
-                            let block = UpdateCodeBlockX{ pidx = 0, pidlistx = pidlist, newcodex = "", begtx = 0, endtx = 0 } 
+                            let block = UpdateCodeBlock{ pid = 0, pidlist = pidls, newcode = "", begt = 0, endt = 0 } 
                             fw "block"
                             pre block
                             -- initReq <- parseRequest "http://localhost:8081/updatecode"
@@ -193,11 +193,11 @@ deleteCodeBlock url pidlist = do
                             print $ responseBody response
 
 deleteCodeBlockX :: String -> [Integer] -> IO()
-deleteCodeBlockX url pidlist = do
+deleteCodeBlockX url pidls = do
                             manager <- newManager defaultManagerSettings
                             let cmd = "deletecode"
                             let furl = url </> cmd
-                            let block = UpdateCodeBlockX{ pidx = 0, pidlistx = pidlist, newcodex = "", begtx = 0, endtx = 0 } 
+                            let block = UpdateCodeBlock{ pid = 0, pidlist = pidls, newcode = "", begt = 0, endt = 0 } 
                             fw "block"
                             pre block
                             -- initReq <- parseRequest "http://localhost:8081/updatecode"
